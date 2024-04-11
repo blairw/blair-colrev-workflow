@@ -102,11 +102,9 @@ Much of the workflow below will still work if these assumptions are not met, but
 	```
 
 
-## Part 4 - Start screening!
+## Part 4 - Screening metadata records
 
 _NOTE: For these steps, I like to use the included `blair-data` folder which you can put in your CoLRev repo. Doing so is of course **optional**. I found it was safe to run `python -m pip install -r requirements.txt` using the same venv as in Part 1. So then I could just run `sh ./records_to_csv_wrapper.sh` within the `blair-data` folder without any problems._ 😊
-
-&emsp;
 
 18. Setup exclusion criteria in `settings.json` and test it by setting one entry as `rev_prescreen_excluded`.
 
@@ -135,14 +133,24 @@ _NOTE: For these steps, I like to use the included `blair-data` folder which you
 		data              0 synthesized
 	```
 
-20. For screening full-texts, mark as:
+
+## Part 5 - Screening full-texts
+
+20. For each file that passed `rev_prescreen_included`, obtain the PDF and put it in `data/pdfs` (NOTE: you might want to make `pdfs` a symlink to storage elsewhere)
+
+21. The following go into `records.bib`:
+
+	```
+	colrev_status                 = {pdf_imported},
+	file                          = {data/pdfs/AanestadHansethMonteiroEtAl2024.pdf},
+	```
+
+22. Run `colrev pdf-prep` to get CoLRev to process each of the PDFs, and then the status will update from `pdf_imported` to `pdf_prepared`.
+
+23. For screening full-texts, mark as:
 	- `rev_synthesized`
 	- `rev_included`
 	- `rev_excluded`
-
-## Coming soon
-
-- PDFs
 
 ## Not working for me yet
 
