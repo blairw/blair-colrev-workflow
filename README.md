@@ -147,7 +147,9 @@ _NOTE: For these steps, I like to use the included `blair-data` folder which you
 
 22. Run `colrev pdf-prep` to get CoLRev to process each of the PDFs, and then the status will update from `pdf_imported` to `pdf_prepared`.
 
-23. For screening full-texts, mark as:
+23. If updated to `pdf_needs_manual_preparation` then run `colrev pdf-prep-man`
+
+24. For screening full-texts, mark as:
 	- `rev_synthesized`
 	- `rev_included`
 	- `rev_excluded`
