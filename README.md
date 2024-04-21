@@ -40,7 +40,7 @@ Much of the workflow below will still work if these assumptions are not met, but
 
 ## Part 2 - Setting up the repo locally
 
-3. `mkdir` a new folder for the project
+3. `mkdir` a new folder for the CoLRev repository
 
 4. Run `colrev init`
 
@@ -92,7 +92,7 @@ Much of the workflow below will still work if these assumptions are not met, but
 
 15. Go over to GitHub in your web browser
 
-16. On GitHub, create a new project **but do not initialise it**
+16. On GitHub, create a new GitHub repository **but do not initialise it**
 
 17. In terminal:
 
