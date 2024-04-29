@@ -20,6 +20,17 @@ Much of the workflow below will still work if these assumptions are not met, but
 - `.bib` exports from Scopus (e.g., using https://www.litbaskets.io)
 - MacOS with Python installed via https://brew.sh
 
+Also tested on WSL (Ubuntu 24.04 on Windows 11), provided the following is set up:
+
+```bash
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.11
+sudo apt install python3.11-dev python3.11-venv
+```
+
+(I tried with Python 3.12 on Ubuntu 24.04 WSL on Windows 11; it had difficulty building dependency `levenshtein`.)
+
 ## Part 1 - Getting CoLRev working
 
 
