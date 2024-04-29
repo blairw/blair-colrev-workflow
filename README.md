@@ -29,6 +29,13 @@ sudo apt install python3.11
 sudo apt install python3.11-dev python3.11-venv
 ```
 
+Also tested on Powershell (Windows 11), provided the following is set up:
+
+```powershell
+scoop bucket add versions
+scoop install versions/python311
+```
+
 (I tried with Python 3.12 on Ubuntu 24.04 WSL on Windows 11; it had difficulty building dependency `levenshtein`.)
 
 ## Part 1 - Getting CoLRev working
@@ -37,17 +44,23 @@ sudo apt install python3.11-dev python3.11-venv
 1. Go to `~/00blair/gitrepos-colrev` (or equivalent on your machine).
 
 2. In this folder, I like to keep all the various venvs that I could be using with CoLRev. Here's an example of me making a new venv:
-
-	```zsh
+	```sh
+	# Linux/Mac
 	python3.11 -m venv _venv_colrev_0_11_0
 	source ./_venv_colrev_0_11_0/bin/activate
 	python -m pip install --upgrade pip wheel
 	python -m pip install --upgrade colrev==0.11.0
+	
+	# Windows - Powershell
+	python3 -m venv _venv_colrev_0_11_0
+	source .\_venv_colrev_0_11_0\Scripts\Activate.ps1
+	python -m pip install --upgrade pip wheel
+	python -m pip install --upgrade colrev==0.11.0
 	```
 
-	Immediately after successfully installing CoLRev into a new venv, it could be a good idea to `deactivate` and then ZIP the whole thing: e.g., _"_venv_colrev_0_11_0 (tested on Python 3.11 on macOS 14.4.1 23E224 arm64).zip"_. 📦
+Immediately after successfully installing CoLRev into a new venv, it could be a good idea to `deactivate` and then ZIP the whole thing: e.g., _"_venv_colrev_0_11_0 (tested on Python 3.11 on macOS 14.4.1 23E224 arm64).zip"_. 📦
 	
-	**All subsequent steps need to be done with that venv activated.**
+**All subsequent steps need to be done with that venv activated.**
 
 ## Part 2 - Setting up the repo locally
 
