@@ -53,7 +53,7 @@ sudo apt install python3.11-dev python3.11-venv
 
 3. `mkdir` a new folder for the CoLRev repository
 
-4. Run `colrev init`
+4. Run `colrev init --light` (to avoid Docker services; although from my testing, the regular `colrev init` works too, at least on Mac)
 
 5. Modify `.gitignore` (e.g., for `.DS_Store`) and make a commit.
 
